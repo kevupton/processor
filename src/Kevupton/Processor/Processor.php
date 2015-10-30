@@ -16,8 +16,9 @@ class Processor {
      * Loads the instance and initiates the process_model.
      */
     public function __construct() {
-        $this->registerProcesses();
         $this->repo = new ProcessQueueRepository();
+
+        $this->registerProcesses();
     }
 
     /**

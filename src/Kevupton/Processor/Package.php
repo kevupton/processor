@@ -1,16 +1,14 @@
 <?php namespace Kevupton\Processor;
 
-use Illuminate\Queue\SerializesModels;
+
 use Kevupton\Processor\Exceptions\ProcessException;
 use Kevupton\Processor\Validator\ProcessValidator;
 use ReflectionClass;
-use Serializable;
+use ReflectionProperty;
 use stdClass;
 
-abstract class Package implements Serializable {
+abstract class Package {
     protected $validation = array();
-
-    use SerializesModels;
 
     /**
      * Validates the class requirements with the input data.
@@ -111,5 +109,47 @@ abstract class Package implements Serializable {
      */
     public function __toString() {
         return $this->toJSON();
+    }
+
+
+    /**
+     * Prepare the instance for serialization.
+     *
+     * @return array
+     */
+    public function __sleep()
+    {
+        $properties = (new ReflectionClass($this))->getProperties();
+
+        foreach ($properties as $property) {
+            $property->setValue($this, $this->getPropertyValue($property));
+        }
+
+        return array_map(function ($p) { return $p->getName(); }, $properties);
+    }
+
+    /**
+     * Restore the model after serialization.
+     *
+     * @return void
+     */
+    public function __wakeup()
+    {
+        foreach ((new ReflectionClass($this))->getProperties() as $property) {
+            $property->setValue($this, $this->getPropertyValue($property));
+        }
+    }
+
+    /**
+     * Get the property value for the given property.
+     *
+     * @param  ReflectionProperty  $property
+     * @return mixed
+     */
+    protected function getPropertyValue(ReflectionProperty $property)
+    {
+        $property->setAccessible(true);
+
+        return $property->getValue($this);
     }
 }
