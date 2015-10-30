@@ -13,8 +13,8 @@ class ProcessLog extends BeastModel {
         'process' => 'required',
         'run_at' => 'required|date',
         'completed' => 'required|numeric',
-        'error_message' => 'required|max:255',
-        'error_type' => 'required|max:64',
+        'error_message' => 'max:255',
+        'error_type' => 'max:255',
         'runtime' => 'required|numeric'
     );
 

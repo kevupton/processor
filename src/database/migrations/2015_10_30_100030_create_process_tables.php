@@ -26,8 +26,8 @@ class CreateProcessTables extends Migration
             $table->text('process');
             $table->datetime('run_at');
             $table->boolean('completed');
-            $table->string('error_message', 255);
-            $table->string('error_type', 64);
+            $table->string('error_message', 255)->nullable();
+            $table->string('error_type', 255)->nullable();
             $table->bigInteger('runtime');
             $table->timestamps();
         });
