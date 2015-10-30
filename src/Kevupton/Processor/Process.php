@@ -40,6 +40,7 @@ class Process  {
             throw new ProcessException("Invalid input data");
         }
         $this->process_log = new ProcessLogRepository();
+        $this->queue_repo = new ProcessQueueRepository();
     }
 
     /**
