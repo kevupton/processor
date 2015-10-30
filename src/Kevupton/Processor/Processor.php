@@ -1,8 +1,7 @@
-<?php
+<?php namespace Kevupton\Processor;
 
-use Kevupton\Processor\Package;
-use Kevupton\Processor\Process;
-use Kevupton\Referrals\Repositories\ProcessQueueRepository;
+
+use Kevupton\Processor\Repositories\ProcessQueueRepository;
 
 class Processor {
 

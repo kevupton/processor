@@ -3,8 +3,8 @@
 use Exception;
 use Kevupton\Processor\Exceptions\ProcessException;
 use Kevupton\Processor\Models\ProcessQueue;
-use Kevupton\Referrals\Repositories\ProcessLogRepository;
-use Kevupton\Referrals\Repositories\ProcessQueueRepository;
+use Kevupton\Processor\Repositories\ProcessLogRepository;
+use Kevupton\Processor\Repositories\ProcessQueueRepository;
 
 class Process  {
     const PACKAGE_FOLDER = 'packages/';

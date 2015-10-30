@@ -1,4 +1,4 @@
-<?php namespace Kevupton\Referrals\Repositories;
+<?php namespace Kevupton\Processor\Repositories;
 
 use Kevupton\BeastCore\Repositories\BeastRepository;
 use Kevupton\Processor\Exceptions\ProcessLogException;

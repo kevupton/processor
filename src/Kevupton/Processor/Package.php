@@ -2,7 +2,6 @@
 
 use Kevupton\Processor\Exceptions\ProcessException;
 use Kevupton\Processor\Validator\ProcessValidator;
-use Processor;
 use Serializable;
 use stdClass;
 
