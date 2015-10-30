@@ -9,6 +9,6 @@ if (!function_exists('add_time')) {
      * @return int
      */
     function add_time($time) {
-        return date(mysql_datetime_format(), strtotime(current_datetime() . " $time"));
+        return date(mysql_datetime_format(), strtotime(current_datetime() . " + $time"));
     }
 }
