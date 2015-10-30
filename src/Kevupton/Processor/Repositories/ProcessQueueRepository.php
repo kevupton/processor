@@ -46,7 +46,7 @@ class ProcessQueueRepository extends BeastRepository {
             'package' => get_class($package),
             'data' => serialize($package),
             'category' => $category,
-            'exec_datetime' => is_string($runtime)? add_time($runtime): add_time("$runtime minutes")
+            'exec_datetime' => is_string($runtime)? $runtime: add_time("$runtime minutes")
         ]);
 
         //if there are errors let us know

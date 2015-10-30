@@ -6,6 +6,7 @@ use Kevupton\BeastCore\BeastModel;
 class ProcessLog extends BeastModel {
     // table name
     protected $table = 'process_log';
+    public $timestamps = true;
 
     // validation rules
     public static $rules = array(

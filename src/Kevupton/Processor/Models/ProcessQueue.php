@@ -6,6 +6,7 @@ use Kevupton\BeastCore\BeastModel;
 class ProcessQueue extends BeastModel {
     // table name
     protected $table = 'process_queue';
+    public $timestamps = true;
 
     // validation rules
     public static $rules = array(
