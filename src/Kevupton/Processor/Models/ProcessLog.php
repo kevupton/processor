@@ -19,7 +19,7 @@ class ProcessLog extends BeastModel {
     );
 
     protected $fillable = array(
-        'process', 'run_datetime', 'completed',
+        'process', 'run_at', 'completed',
         'error_message', 'error_type', 'runtime',
     );
 }
