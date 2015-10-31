@@ -23,8 +23,21 @@ if (!function_exists('next_hour')) {
     function next_hour($time = null) {
         $format = "Y-m-d H:00:00";
         if ($time == null)
-            return date("Y-m-d H:00:00", strtotime("next hour"));
+            return date($format, strtotime("next hour"));
         else
-            return date("Y-m-d H:00:00", strtotime("$time + 1 hour"));
+            return date($format, strtotime("$time + 1 hour"));
+    }
+}
+
+if (!function_exists('next_hours')) {
+    /**
+     * Gets the next hours in mysql datetime format
+     *
+     * @param int $number the number of hours
+     * @param null|string $time the time of to add 1 hour
+     * @return bool|string
+     */
+    function next_hours($number = 1, $time = null) {
+        return date("Y-m-d H:00:00", strtotime((is_null($time)? current_datetime(): '') . " + $number hours"));
     }
 }
