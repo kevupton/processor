@@ -1,12 +1,12 @@
 <?php namespace Kevupton\Processor\Repositories;
 
-use Kevupton\BeastCore\Repositories\BeastRepository;
+use Kevupton\Ethereal\Repositories\Repository;
 use Kevupton\Processor\Exceptions\ProcessLogException;
 use Kevupton\Processor\Models\ProcessLog;
 use Kevupton\Processor\Models\ProcessQueue;
 
 
-class ProcessLogRepository extends BeastRepository {
+class ProcessLogRepository extends Repository {
 
     protected $exceptions = [
         'main' => ProcessLogException::class,

@@ -1,9 +1,9 @@
 <?php namespace Kevupton\Processor\Models;
 
 
-use Kevupton\BeastCore\BeastModel;
+use Kevupton\Ethereal\Models\Ethereal;
 
-class ProcessLog extends BeastModel {
+class ProcessLog extends Ethereal {
     // table name
     protected $table = 'process_log';
     public $timestamps = true;

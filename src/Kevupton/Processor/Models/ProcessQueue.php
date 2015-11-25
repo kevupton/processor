@@ -1,9 +1,8 @@
 <?php namespace Kevupton\Processor\Models;
 
+use Kevupton\Ethereal\Models\Ethereal;
 
-use Kevupton\BeastCore\BeastModel;
-
-class ProcessQueue extends BeastModel {
+class ProcessQueue extends Ethereal {
     // table name
     protected $table = 'process_queue';
     public $timestamps = true;
